@@ -1,0 +1,17 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment  } from 'src/environments/environment';
+import { Partido } from './Partido';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PartidoService {
+  private apiUrl: string = environment.baseUrl;
+
+  constructor(private http: HttpClient) { }
+  getPartidos(): Observable<Partido[]> {
+    return this.http.get<Partido[]>(this.apiUrl);
+  }
+}
