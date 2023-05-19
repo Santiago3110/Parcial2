@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Equipo } from '../Equipo';
 import { EquipoService } from '../Equipo.service';
+import { Grupo } from 'src/app/Grupo';
 
 @Component({
   selector: 'app-Equipo-List',
@@ -8,16 +9,19 @@ import { EquipoService } from '../Equipo.service';
   styleUrls: ['./Equipo-List.component.css']
 })
 export class EquipoListComponent implements OnInit {
+  grupos: Array<Grupo> = [];
   equipos: Array<Equipo> = [];
+
   constructor(private equipoService: EquipoService) { }
-  getEquipos(): void {
-    this.equipoService.getEquipos().subscribe((equipos) => {
-      this.equipos = equipos;
+  getGrupos(): void {
+    this.equipoService.getGrupos().subscribe((grupos) => {
+      this.grupos = grupos;
+
     });
   }
 
   ngOnInit() {
-    this.getEquipos();
+    this.getGrupos();
   }
 
 }

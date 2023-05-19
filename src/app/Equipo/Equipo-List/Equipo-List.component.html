@@ -4,7 +4,7 @@
   </div>
   <div class="row" id="tableDiv">
     <div class="col-6">
-      <table class="table table-hover">
+      <table class="table table-sm">
         <thead>
           <tr>
             <th scope="col">Name</th>
@@ -16,12 +16,13 @@
           </tr>
         </thead>
         <tbody id="partidos">
-          <tr *ngFor="let equipo of equipos">
+          <tr *ngFor="let grupo of grupos">
             <td>
-              <dd>{{equipo.name}}</dd>
+              <dd>{{grupo.letter}}</dd>
             </td>
+            <!--
             <td>
-              <dd>{{equipo.country}}</dd>
+              <dd>{{equipo.teams}}</dd>
             </td>
             <td>
               <dd>{{equipo.games_played}}</dd>
@@ -35,6 +36,7 @@
             <td>
               <dd>{{equipo.draws}}</dd>
             </td>
+            -->
         </tbody>
       </table>
     </div>

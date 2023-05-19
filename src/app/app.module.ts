@@ -9,6 +9,7 @@ import { HomeTeamModule } from './HomeTeam/HomeTeam.module';
 import { AwayTeamModule } from './AwayTeam/AwayTeam.module';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent
