@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PartidoModule } from './Partido/Partido.module';
+import { EquipoModule } from './Equipo/Equipo.module';
 import { HomeTeamModule } from './HomeTeam/HomeTeam.module';
 import { AwayTeamModule } from './AwayTeam/AwayTeam.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     PartidoModule,
+    EquipoModule,
     HomeTeamModule,
     AwayTeamModule,
     HttpClientModule
