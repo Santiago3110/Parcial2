@@ -9,19 +9,35 @@ import { Grupo } from 'src/app/Grupo';
   styleUrls: ['./Equipo-List.component.css']
 })
 export class EquipoListComponent implements OnInit {
-  grupos: Array<Grupo> = [];
   equipos: Array<Equipo> = [];
+  grupos: Array<Grupo> = [];
+  selectedEquipo!: Equipo;
+  selected: Boolean = false;
 
   constructor(private equipoService: EquipoService) { }
-  getGrupos(): void {
-    this.equipoService.getGrupos().subscribe((grupos) => {
-      this.grupos = grupos;
-
+  getEquipos(): void {
+    this.equipoService.getGrupos().subscribe((grupos: {groups: any;}
+      ) => {
+      let variable: Grupo[] = [];
+      grupos.groups.forEach((grupo: Grupo) => {
+        grupo.teams.forEach((equipo)=>
+        {
+          this.equipos.push(equipo);
+        });
+        variable.push(grupo);
+      })
+      ;
+      this.grupos = variable;
     });
   }
 
+  onSelected(equipo: Equipo): void {
+    this.selected = true;
+    this.selectedEquipo = equipo;
+  }
+
   ngOnInit() {
-    this.getGrupos();
+    this.getEquipos();
   }
 
 }

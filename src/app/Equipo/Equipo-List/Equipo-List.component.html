@@ -1,28 +1,32 @@
 <div class="container-fluid" style="margin-left: 50px;">
   <div class="row">
-    <h2>Listado de equipos</h2>
+    <div style="display: inline-flex;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+      </svg>
+      <h2>Listado de equipos</h2>
+    </div>
   </div>
   <div class="row" id="tableDiv">
     <div class="col-6">
-      <table class="table">
-        <thead>
+      <table class="table table-bordered" style="border-color: black;">
+        <thead class="thead-dark" style="background-color: rgb(63, 63, 63);">
           <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Country</th>
-            <th scope="col">Games Played</th>
-            <th scope="col">Wins</th>
-            <th scope="col">Losses</th>
-            <th scope="col">Draws</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Pais</th>
+            <th scope="col">Partidos jugados</th>
+            <th scope="col">Victorias</th>
+            <th scope="col">Derrotas</th>
+            <th scope="col">Empates</th>
           </tr>
         </thead>
         <tbody id="partidos">
-          <tr *ngFor="let grupo of grupos">
-            <td>
-              <dd>{{grupo.letter}}</dd>
+          <tr *ngFor="let equipo of equipos">
+            <td style="background-color: rgb(0, 0, 0); color: white;">
+              <dd>{{equipo.name}}</dd>
             </td>
-            <!--
             <td>
-              <dd>{{equipo.teams}}</dd>
+              <dd>{{equipo.country}}</dd>
             </td>
             <td>
               <dd>{{equipo.games_played}}</dd>
@@ -36,7 +40,6 @@
             <td>
               <dd>{{equipo.draws}}</dd>
             </td>
-            -->
         </tbody>
       </table>
     </div>
