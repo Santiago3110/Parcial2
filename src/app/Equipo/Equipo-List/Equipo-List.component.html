@@ -7,6 +7,9 @@
       <h2>Listado de equipos</h2>
     </div>
   </div>
+  <div class="col-4" *ngIf="selected">
+    <app-Equipo-detail [equipoDetail]="selectedEquipo"></app-Equipo-detail>
+  </div>
   <div class="row" id="tableDiv">
     <div class="col-6">
       <table class="table table-bordered" style="border-color: black;">
@@ -21,7 +24,7 @@
           </tr>
         </thead>
         <tbody id="partidos">
-          <tr *ngFor="let equipo of equipos">
+          <tr *ngFor="let equipo of equipos" (click)="onSelected(equipo)">
             <td style="background-color: rgb(0, 0, 0); color: white;">
               <dd>{{equipo.name}}</dd>
             </td>
